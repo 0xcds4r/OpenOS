@@ -20,6 +20,7 @@
 ## Project Structure
 
 OpenOS/
+
 ├─ kernel/ # Kernel source code
 
 │ ├─ kernel.c # Main kernel code (terminal, commands)
