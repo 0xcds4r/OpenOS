@@ -19,29 +19,20 @@
 
 ## Project Structure
 
+```bash
 OpenOS/
-
 ├─ kernel/ # Kernel source code
-
 │ ├─ kernel.c # Main kernel code (terminal, commands)
-
 │ └─ kernel.h # Constants, structures, kernel API
-
 ├─ stage1/ # Stage 1 bootloader (32-bit)
-
 │ └─ boot.asm # Multiboot header and protected/long mode setup
-
 ├─ stage2/ # Stage 2 bootloader (long mode setup)
-
 │ ├─ longmode.asm
-
 │ └─ setup.asm
-
 ├─ run.sh # Build and run script (QEMU)
-
 ├─ linker.ld # Kernel linker script
-
 └─ README.md
+```
 
 ---
 
