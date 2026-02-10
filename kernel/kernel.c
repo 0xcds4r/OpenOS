@@ -99,17 +99,6 @@ static void register_command(const char* name, CommandCallback cb)
     }
 }
 
-static void cmd_clear(void) { clear_screen(); }
-
-static void cmd_echo(void)
-{
-    if (input_pos > 5) { 
-        print(input_buffer + 5, COLOR_WHITE_ON_BLACK);
-    }
-
-    put_char('\n', COLOR_WHITE_ON_BLACK);
-}
-
 static void handle_key(uint8_t scancode) 
 {
     if (scancode & 0x80) return;
@@ -181,6 +170,17 @@ void initialize_api()
 {
     kernel_api.print = print;
     kernel_api.register_command = register_command;
+}
+
+static void cmd_clear(void) { clear_screen(); }
+
+static void cmd_echo(void)
+{
+    if (input_pos > 5) { 
+        print(input_buffer + 5, COLOR_WHITE_ON_BLACK);
+    }
+
+    put_char('\n', COLOR_WHITE_ON_BLACK);
 }
 
 void initialize_cmd() 

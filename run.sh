@@ -31,8 +31,9 @@ cat > $OUT/boot/grub/grub.cfg <<EOF
 set timeout=0
 set default=0
 
-menuentry "Botatos OS" {
+menuentry "Open OS" {
     multiboot /boot/kernel.elf
+    set gfxmode=1024x768x32
     boot
 }
 EOF
@@ -41,6 +42,6 @@ echo "[*] building ISO"
 grub-mkrescue -o $ISO_IMG $OUT -d /usr/lib/grub/i386-pc
 
 echo "[*] running QEMU"
-qemu-system-x86_64 -cdrom $ISO_IMG -m 512M -serial stdio \
+qemu-system-x86_64 -cdrom $ISO_IMG -m 8192M -serial stdio \
     -vga std -display gtk,show-cursor=on \
     -usb -device usb-host,vendorid=0x1c4f,productid=0x0026
