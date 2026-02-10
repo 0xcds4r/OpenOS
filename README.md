@@ -2,6 +2,8 @@
 
 **OpenOS** is a minimalist x86_64 operating system with its own kernel, supporting long mode and a basic text terminal. The project aims to explore low-level programming, x86_64 architecture, and kernel development.
 
+![alt text](image.png)
+
 ---
 
 ## Features
